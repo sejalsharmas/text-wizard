@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXT WIZARD</title>
+  <style>
+    body {
+        background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+}
+
+.card-cotainer {
+    width: 800px;
+    padding: 50px 20px;
+    background-image:url('https://www.postergully.com/cdn/shop/products/a66572dd6ca8b26e81c4df20aa09c87d_95b2c927-ffc7-4fde-b63d-dec076060b87.jpg?v=1578647513');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 10px;
+    margin-left: 350px;
+    margin-top: 50px;
+    box-shadow: 0px 5px 20px 0px beige;
+}
+
+.heading {
+    text-align: center;
+    font-size: 50px;
+    background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+    color: beige;
+    border-radius: 10px;
+}   
+
+.text-field {
+    width: calc(100% - 30px);
+    padding: 15px;
+    margin: 15px 0;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size:15px;
+    outline: none;
+    background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+    text-align: center;
+    color: beige;
+    cursor: pointer;
+}
+
+.result-text{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+    color: beige;
+    border-radius: 10px;
+
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 5rem;
+
+}
+
+.btn {
+    background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+            border: none;
+            width: 150px;
+            height: 8vh;
+            color: white;
+            padding: 10px 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+           
+}
+
+
+  </style>
+</head>
+
+<body>
+    <div class="card-cotainer">
+        <h1 class="heading">TEXT WIZARD</h1>
+
+        <div>
+            <textarea class="text-field" id="input-text"  rows="5" placeholder="Enter your text here..."></textarea>
+        </div>
+
+        <div class="result-text" id="resultText"> result</div>
+
+        <div class="btn-container">
+            <button class="btn" onclick="ActionResult('UpperCase')">Uppercase</button>
+
+            <button class="btn" onclick="ActionResult('LowerCase')">Lowercase</button>
+
+            <button class="btn" onclick="ActionResult('CharCount')">Count Characters</button>
+
+            <button class="btn" onclick="ActionResult('WordCount')">Count Words</button>
+        </div>
+    </div>
+
+
+    <script>
+        function ActionResult(action) {
+            const inputText = document.getElementById("input-text")
+            const resultText = document.getElementById("resultText")
+
+            if (action == 'UpperCase') {
+                resultText.innerText = inputText.value.toUpperCase();
+            }
+            else if (action == 'LowerCase') {
+                resultText.innerText = inputText.value.toLowerCase();
+            }
+            else if (action == 'CharCount') {
+                resultText.innerText = (`Total Characters : ${inputText.value.length}`);
+            }
+            else { 
+                resultText.innerText = (`Total Words : ${inputText.value.split(" ").length}`);
+
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
